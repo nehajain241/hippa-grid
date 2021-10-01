@@ -1,0 +1,12 @@
+<span *ngFor="let button of buttons" class="icon"
+  ><i
+    nz-icon
+    [nzType]="button?.icon"
+    nzTheme="outline"
+    (click)="button?.onCLick(params?.data)"
+    [nzTooltipTitle]="button?.label"
+    nzTooltipPlacement="left"
+    nz-button
+    nz-tooltip
+  ></i>
+</span>

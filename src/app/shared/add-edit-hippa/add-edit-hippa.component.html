@@ -1,0 +1,28 @@
+<form nz-form [formGroup]="formGroup">
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Signed</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzValidatingTip="Validating...">
+      <nz-date-picker
+        formControlName="hippaasigned"
+        [nzFormat]="dateFormat"
+      ></nz-date-picker>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Expries</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzValidatingTip="Validating...">
+      <nz-date-picker
+        formControlName="hippaexpires"
+        [nzFormat]="dateFormat"
+      ></nz-date-picker>
+    </nz-form-control>
+  </nz-form-item>
+  <div>
+    <button nz-button nzType="primary" type="submit" (click)="submit()">
+      Save
+    </button>
+    <button nz-button nzType="default" type="button" (click)="close()">
+      Cancel
+    </button>
+  </div>
+</form>

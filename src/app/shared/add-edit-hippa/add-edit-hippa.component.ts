@@ -28,7 +28,7 @@ export class AddEditHippaComponent implements OnInit {
 
   close() {
     this.nzModalRef.close();
-  }
+   }
 
   submit() {
     if (this.formGroup.valid) {

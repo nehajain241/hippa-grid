@@ -3,6 +3,7 @@ import { AddEditHippaComponent } from './../../shared/add-edit-hippa/add-edit-hi
 import { HippService } from './../../service/hipp.service';
 import { Component, OnInit } from '@angular/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-hippa-grid',
@@ -74,7 +75,7 @@ export class HippaGridComponent implements OnInit {
       // To send particular insurance info
     });
 
-    modal.afterClose.subscribe((value) => {
+    modal.afterClose.pipe(filter((value) => value)).subscribe((value) => {
       if (data) {
         this.hippService.updateData(0, value);
       } else {
